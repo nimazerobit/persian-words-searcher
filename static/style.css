@@ -1,0 +1,117 @@
+* {
+    font-family: 'Vazirmatn', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f7f8fa;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-box {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+ul {
+    max-width: 500px;
+    margin: 20px auto;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.3s forwards;
+}
+
+li:nth-child(n) {
+    animation-delay: calc(var(--delay) * 0.05s);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timing {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+.error-box {
+    color: red;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}
+.warning-box {
+    font-size: 0.85rem;
+    color: #ff9800;
+    margin-top: 15px;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+    50% { box-shadow: 0 0 0 6px rgba(255,0,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+}
+
+.pulse-effect {
+    animation: pulse 1s ease-out infinite;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1e1e1e;
+        color: #e0e0e0;
+    }
+    h2 {
+        color: #f1f1f1;
+    }
+    input, select {
+        background: #2d2d2d;
+        color: #f1f1f1;
+        border: 1px solid #555;
+    }
+    ul li {
+        background: #2c2c2c;
+        color: #f1f1f1;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .timing {
+        color: #aaa;
+    }
+    #error-box {
+        color: #ff6b6b;
+    }
+}
