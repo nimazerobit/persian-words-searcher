@@ -2,6 +2,8 @@
 # Persian Words Searcher
 A simple Flask-based web application for searching Persian words stored in an SQLite database.
 
+<img width="2480" height="1250" alt="web page screenshot" src="https://github.com/user-attachments/assets/87773124-06a1-47c2-bcd3-2393a0b2be4e" />
+
 ## Categories
 - همه (All)
 - فحش ها (Insults)
@@ -54,15 +56,10 @@ Search for words based on filters.
 **Response JSON:**
 
 ```json
-
 {
-
-"results": ["علی", "لیلا"],
-
-"count": 2,
-
-"server_ms": 5
-
+  "results": ["علی", "لیلا"],
+  "count": 2,
+  "server_ms": 5
 }
 
 ```
