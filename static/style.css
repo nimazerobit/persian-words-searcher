@@ -9,6 +9,13 @@ body {
     padding: 0;
 }
 
+hr {
+    height: 1px;
+    background: #b7b7b7;
+    border: 0;
+    margin: 20px 0;
+}
+
 h2 {
     text-align: center;
     margin-top: 20px;
@@ -71,6 +78,7 @@ li:nth-child(n) {
     font-weight: bold;
     padding: 5px;
     text-align: center;
+    font-size: 13px;
 }
 .warning-box {
     font-size: 0.85rem;
@@ -87,6 +95,22 @@ li:nth-child(n) {
 
 .pulse-effect {
     animation: pulse 1s ease-out infinite;
+}
+
+#helpButton {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    padding: 11px 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    border: 1px solid #4f4f4f;
+    cursor: pointer;
+}
+
+.help {
+    padding: 0 30px;
+    text-align: justify;
 }
 
 /* Dark Mode */
@@ -113,5 +137,17 @@ li:nth-child(n) {
     }
     #error-box {
         color: #ff6b6b;
+    }
+    #helpButton {
+        background-color: #111;
+    }
+    .developer {
+        background-color: #111;
+    }
+}
+
+@media (max-width: 768px) {
+    ul {
+        padding: 0 30px;
     }
 }

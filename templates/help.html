@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جستجوی کلمات</title>
+    <link rel="stylesheet" href="https://lib.arvancloud.ir/vazir-font/33.003/Farsi-Digits-Non-Latin/Vazirmatn-FD-NL-font-face.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+<body>
+    <h2>راهنمای جستجوگر کلمات فارسی</h2>
+    <div class="help">
+        <p>برای جستجوی کلماتی که از یکسری حروف مشخص ساخته شده اند، صرفا آن حروف را در فیلد حروف بدون فاصله و پشت سر هم وارد کنید.</p>
+        <span>مثل: </span>
+        <input type="text" placeholder="برذال" readonly>
+        <hr>
+        <p>برای جستجوی کلماتی که حروف اولشان با یک سری حروف یا یک حرف خاص شروع می شود، باید آن را بین # قرار دهید.</p>
+        <span>مثل: </span>
+        <input type="text" placeholder="#ف#" readonly style="margin-bottom: 10px;">
+        <br>
+        <span>مثل: </span>
+        <input type="text" placeholder="#راه#" readonly>
+        <hr>
+        <p>برای جستجوی کلماتی که حروف آخرشان با یک سری حروف یا حرف خاص تمام می شود، باید آن را بین @ قرار دهید.</p>
+        <span>مثل: </span>
+        <input type="text" placeholder="@ف@" readonly style="margin-bottom: 10px;">
+        <br>
+        <span>مثل: </span>
+        <input type="text" placeholder="@راه@" readonly>
+        <hr>
+        <a href="/" style="
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #1862ff;
+            padding: 5px 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+        ">بازگشت به صفحه اصلی</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
