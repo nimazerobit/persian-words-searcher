@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جستجوی کلمات</title>
-    <link rel="stylesheet" href="https://lib.arvancloud.ir/vazir-font/33.003/Farsi-Digits-Non-Latin/Vazirmatn-FD-NL-font-face.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>جستجوی کلمات</title>
+        <link rel="stylesheet" href="https://lib.arvancloud.ir/vazir-font/33.003/Farsi-Digits-Non-Latin/Vazirmatn-FD-NL-font-face.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
 <body>
-    <h2>جستجوگر کلمات فارسی</h2>
-    <div class="warning-box">⚠️ امکان وجود کلمات نامربوط و غلط در نتایج وجود دارد</div>
-    <div class="search-box">
-        <input type="text" id="lettersInput" placeholder="جستجو...">
-        <input type="number" id="lengthInput" placeholder="طول کلمه">
-        <select id="categorySelect">
-            {% for cat in categories %}
-                <option value="{{ cat }}">{{ cat }}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div id="lang-warning" class="warning-box" style="display: none;">✋ کیبورد شما باید فارسی باشد!</div>
-    <div class="timing" id="timing"></div>
-    <div id="error-box" class="error-box"></div>
-    <ul id="results"></ul>
-    <div id="helpButton" onclick="window.location.replace('/help')">راهنما</div>
+    <main class="page-shell">
+        <header class="page-header">
+            <h1>جستجوگر کلمات فارسی</h1>
+            <p class="warning-box">⚠️ امکان وجود کلمات نامربوط و غلط در نتایج وجود دارد</p>
+        </header>
+
+        <section class="search-panel" aria-label="فیلترهای جستجو">
+            <div class="search-box">
+                <label class="field">
+                    <span>حروف</span>
+                    <input type="text" id="lettersInput" placeholder="مثال: برذال" autocomplete="off">
+                </label>
+                <label class="field">
+                    <span>طول کلمه</span>
+                    <input type="number" id="lengthInput" placeholder="مثال: ۵" min="1" inputmode="numeric">
+                </label>
+                <label class="field">
+                    <span>دسته‌بندی</span>
+                    <select id="categorySelect">
+                        {% for cat in categories %}
+                            <option value="{{ cat }}">{{ cat }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </div>
+        </section>
+
+        <div id="lang-warning" class="warning-box" hidden>✋ کیبورد شما باید فارسی باشد!</div>
+        <div id="loading" class="loading-state" role="status" aria-live="polite" hidden>
+            <span class="spinner" aria-hidden="true"></span>
+            <span>در حال جستجو...</span>
+        </div>
+        <div class="timing" id="timing" aria-live="polite"></div>
+        <div id="error-box" class="error-box" role="alert"></div>
+        <ul id="results" aria-live="polite"></ul>
+    </main>
+
+    <a id="helpButton" href="/help">راهنما</a>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
