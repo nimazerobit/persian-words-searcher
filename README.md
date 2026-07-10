@@ -2,7 +2,8 @@
 # Persian Words Searcher
 A simple Flask-based web application for searching Persian words stored in an SQLite database.
 
-<img width="2480" height="1250" alt="web page screenshot" src="https://github.com/user-attachments/assets/87773124-06a1-47c2-bcd3-2393a0b2be4e" />
+<img width="2480" height="1062" alt="web page screenshot" src="https://github.com/user-attachments/assets/54d5596f-21ef-4a8b-826e-ddade08e65a8" />
+
 
 ## Categories
 - همه (All)
